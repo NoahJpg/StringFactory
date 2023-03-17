@@ -26,7 +26,7 @@ namespace Factory.Models
       Machine thisMachine = _db.Machines
           .Include(machine => machine.JoinEntities)
           .ThenInclude(join => join.Engineer)
-          .FirstOrDefault(machine => machine.machineId == id);
+          .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
 
@@ -88,7 +88,7 @@ namespace Factory.Models
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.machineId == id);
+      Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
       _db.Machines.Remove(thisMachine);
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -100,7 +100,7 @@ namespace Factory.Models
       EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
       _db.EngineerMachines.Remove(joinEntry);
       _db.SaveChanges();
-      return RedicrectToAction("Index");
+      return RedirectToAction("Index");
     }
   }
 }

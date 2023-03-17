@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using StringFactory.Models;
+using Factory.Models;
 
-namespace DoctorsOffice
+namespace Factory
 {
   class Program
   {
@@ -13,7 +13,7 @@ namespace DoctorsOffice
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<DoctorsOfficeContext>(
+      builder.Services.AddDbContext<FactoryContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]

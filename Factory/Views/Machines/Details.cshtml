@@ -3,7 +3,7 @@
 }
 
 @using Factory.Models
-@model Factory.Models.Patient
+@model Factory.Models.Machine
 
 <h2>Machine Details</h2>
 <hr />
@@ -12,15 +12,15 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This patient does not see any engineers</p>
+  <p>This machine does not have any engineers</p>
 }
 else
 {
-  <h4>Doctors the patient sees:</h4>
+  <h4>Doctors the machine has:</h4>
   <ul>
   @foreach(EngineerMachine join in Model.JoinEntities)
   {
-    <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId}) | Title: @join.Engineer.EngineerTitle</li>
+    <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId})</li>
     @using (Html.BeginForm("DeleteJoin", "Machines"))
     {
       @Html.Hidden("joinId", @join.EngineerMachineId)
