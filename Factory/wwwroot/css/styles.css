@@ -3,14 +3,10 @@ div#footer {
 	bottom:0px;
 	left:0px;
 	width:100%;
-	color:#CCC;
-	background:#333;
+	color:#ffb8b8;
+	background:#ffb9b9;
 	padding:8px;
 	text-align: center;
-}
-
-#footer a {
-  color: #FFF;
 }
 
 .home-page-links{

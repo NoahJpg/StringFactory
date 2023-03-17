@@ -6,8 +6,9 @@ namespace Factory.Models
   public class Engineer
   {
     public int EngineerId { get; set; }
-    [Required(ErrorMessage = "The Engineer must have a name!!")]
+    [Required]
     public string EngineerName { get; set; }
+    [Required]
     public string EngineerDetails { get; set; }
     public List<EngineerMachine> JoinEntities { get; }
   }

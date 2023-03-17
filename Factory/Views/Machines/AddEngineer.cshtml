@@ -4,9 +4,9 @@
 
 @model Factory.Models.Machine
 
-<h2>Add a engineer</h2>
+<h2>Add an engineer</h2>
 
-<h4>Add a engineer for this machine: @Html.DisplayFor(model => model.MachineName)</h4>
+<h4>for this machine: <em>@Html.DisplayFor(model => model.MachineName)</em></h4>
 
 @using (Html.BeginForm())
 {
@@ -17,5 +17,5 @@
 
     <input type="submit" value="Save" />
 }
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<hr>
+<p>@Html.ActionLink("- Back to list -", "Index")</p>
