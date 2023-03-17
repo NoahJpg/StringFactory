@@ -12,13 +12,12 @@
     @Html.TextBoxFor(model => model.MachineName)
 
     @Html.LabelFor(model => model.MachineName, "Machine Details:")
-    @Html.TextBoxFor(model => model.MachineDetails, new { @class = "form-control", type = "date", style = "width: auto;"} )
+    @Html.TextBoxFor(model => model.MachineDetails, new { @class = "form-control", type = "text", style = "width: auto;"} )
 
     <input type="submit" value="Add new machine"/>
 }
 
 <p>@Html.ValidationMessageFor(model => model.MachineId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-
 <p>@Html.ValidationMessageFor(model => model.MachineName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 <p>@Html.ActionLink("Show all machines", "Index")</p>

@@ -18,7 +18,7 @@ namespace Factory.Models
 
     public ActionResult Index()
     {
-      return View(_db.Engineers.ToList());
+      return View(_db.Machines.ToList());
     }
 
     public ActionResult Details(int id)
