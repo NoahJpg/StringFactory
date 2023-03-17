@@ -47,6 +47,7 @@ A website for managing Engineers and Machines at a Silly String factory.
  * `$ dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0` 
  * `$ dotnet ef migrations add Initial` 
  * `$ dotnet ef migrations add AddItemsPriority`
+ * `$ dotnet ef database update` (- Run this command anytime changes are made to the database -)
  
 8. Then, run the command `dotnet run` to compile and execute the console application. Optionally, you can run `dotnet build` to compile this console app without running it.
 9. Run `dotnet watch run` in the command line to start the project in development mode with a watcher.
