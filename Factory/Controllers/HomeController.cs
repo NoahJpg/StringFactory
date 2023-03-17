@@ -1,12 +1,12 @@
-using ProjectName.Models;
+using Factory.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProjectName.Controllers
+namespace Factory.Controllers
 {
   public class HomeController : Controller
   {
 
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Letter() 
     {
       return View();
