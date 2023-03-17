@@ -9,14 +9,14 @@
 @using (Html.BeginForm())
 {
     <p>Engineer Name: @Html.TextBoxFor(model => model.EngineerName)</p>
+    <p>Engineer Details: @Html.TextBoxFor(model => model.EngineerDetails)</p>
     
     <input type="submit" value="Add new engineer" class="btn btn-primary" />
 }
 
 <p>@Html.ValidationMessageFor(model => model.EngineerId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-
 <p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.EngineerDetails, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 <p>@Html.ActionLink("Show all engineers", "Index")</p>
-
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

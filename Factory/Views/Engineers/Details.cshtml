@@ -11,7 +11,7 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This engineer does not belong to any machines</p>
+  <p>This engineer does not have any assigned machines</p>
 }
 else
 {
@@ -28,7 +28,7 @@ else
   }
   </ul>
 }
-
+<hr>
 <p>@Html.ActionLink("Back to list", "Index")</p>
 
 <p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
