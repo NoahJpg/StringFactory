@@ -7,9 +7,9 @@ namespace Factory.Models
   public class Machine
   {
     public int MachineId { get; set; }
-    [Required(ErrorMessage = "The Machine name field can't be empty!")]
+    [Required(ErrorMessage = "The Machine must have a name!")]
     public string MachineName { get; set; }
-    [Required(ErrorMessage = "You must add an engineer to a machine. Have you added a machine yet?")]
+    [Required(ErrorMessage = "You Machine must have details!")]
     public string MachineDetails { get; set; }
     public List<EngineerMachine> JoinEntities { get;}
   }
