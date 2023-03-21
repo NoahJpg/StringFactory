@@ -44,7 +44,6 @@ A website for managing Engineers and Machines at a Silly String factory.
 6. Navigate to this project's production directory called "Factory". 
 7. In the command line, run these commands in order
  * `$ dotnet tool install --global dotnet-ef --version 6.0.0` 
- * `$ dotnet add package Microsoft.EntityFrameworkCore.Design -v 6.0.0` 
  * `$ dotnet ef migrations add Initial` 
  * `$ dotnet ef migrations add AddItemsPriority`
  * `$ dotnet ef database update` (- Run this command anytime changes are made to the database -)

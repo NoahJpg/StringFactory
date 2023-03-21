@@ -37,10 +37,17 @@ namespace Factory.Controllers
 
     [HttpPost]
     public ActionResult Create(Engineer engineer)
-    {
+    { 
+      if (ModelState.IsValid)
+      {
       _db.Engineers.Add(engineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
+      }
+      else
+      {
+        return View("Create");
+      }
     }
 
     public ActionResult AddMachine(int id)
@@ -73,10 +80,17 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Edit(Engineer engineer)
     {
-      _db.Engineers.Update(engineer);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }    
+      if (ModelState.IsValid)
+      {
+        _db.Engineers.Update(engineer);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      } 
+      else
+      { 
+        return View ("Edit");
+      }
+    }  
 
     public ActionResult Delete(int id)
     {

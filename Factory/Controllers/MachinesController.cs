@@ -37,12 +37,20 @@ namespace Factory.Models
 
     [HttpPost]
     public ActionResult Create(Machine machine)
-    {
+
+    { 
+      if (ModelState.IsValid)
+      {
       _db.Machines.Add(machine);
       _db.SaveChanges();
       return RedirectToAction("Index");
+      }
+      else
+      {
+        return View("Create");
+      }
     }
-
+    
       public ActionResult AddEngineer(int id)
       {
         Machine thisMachine = _db.Machines.FirstOrDefault(machines => machines.MachineId == id);
@@ -74,10 +82,18 @@ namespace Factory.Models
     [HttpPost]
     public ActionResult Edit(Machine machine)
     {
-      _db.Machines.Update(machine);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if (ModelState.IsValid)
+      {
+        _db.Machines.Update(machine);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      } 
+      else
+      { 
+        return View ("Edit");
+      }
     }
+  
 
     public ActionResult Delete(int id)
     {

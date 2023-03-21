@@ -12,9 +12,13 @@
 {
   @Html.HiddenFor(model => model.EngineerId)
 
-  <p>Engineer Name: @Html.EditorFor(model => model.EngineerName)</p>
+  <p>Engineer Name: @Html.EditorFor(model => model.EngineerName) Engineer Details: @Html.EditorFor(model => model.EngineerDetails)</p>
 
   <input type="submit" value="Save" /><hr>
 }
+
+<p>@Html.ValidationMessageFor(model => model.EngineerId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.EngineerName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.EngineerDetails, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 <p>@Html.ActionLink("- Back to list -", "Index")</p>
